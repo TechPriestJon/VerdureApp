@@ -1,6 +1,9 @@
 /Verdure/Verdure.Domain/bin
 /Verdure/Verdure.Domain/obj
 
+/Verdure/Verdure.Domain.Tests/bin
+/Verdure/Verdure.Domain.Tests/obj
+
 /Verdure/Verdure.Domain.Mobile/bin
 /Verdure/Verdure.Domain.Mobile/obj
 

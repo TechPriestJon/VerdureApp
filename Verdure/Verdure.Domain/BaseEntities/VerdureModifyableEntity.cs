@@ -8,9 +8,14 @@ namespace Verdure.Domain.Base
 
         protected VerdureModifyableEntity() : base()
         {
-            _modifiedDate = DateTimeOffset.UtcNow;
+            _modifiedDate = CreatedDate;
         }
 
         public DateTimeOffset ModifiedDate => _modifiedDate;
+
+        public void Update()
+        {
+            _modifiedDate = DateTimeOffset.UtcNow;
+        }
     }
 }

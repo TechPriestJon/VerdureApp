@@ -4,4 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\Verdure.Domain\BaseEntities\VerdureCreatableEntity.cs" Link="BaseEntities\VerdureCreatableEntity.cs" />
+    <Compile Include="..\Verdure.Domain\BaseEntities\VerdureModifyableEntity.cs" Link="BaseEntities\VerdureModifyableEntity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BaseEntities\" />
+  </ItemGroup>
+
 </Project>
