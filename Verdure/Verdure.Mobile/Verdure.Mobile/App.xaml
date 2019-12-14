@@ -1,0 +1,10 @@
+﻿<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+             x:Class="Verdure.Mobile.App">
+    <Application.Resources>
+
+        <!-- Application resource dictionary -->
+
+    </Application.Resources>
+</prism:PrismApplication>
