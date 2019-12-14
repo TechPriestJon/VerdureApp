@@ -20,8 +20,8 @@ namespace Verdure.Domain.Tests.BaseEntities
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("VerdureModifyableEntityTests")]
-    public partial class VerdureModifyableEntityTestsFeature
+    [NUnit.Framework.DescriptionAttribute("ModifyableEntity")]
+    public partial class ModifyableEntityFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,7 +35,7 @@ namespace Verdure.Domain.Tests.BaseEntities
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "VerdureModifyableEntityTests", "\tAs a user\r\n\tIn order to know when an object is modified\r\n\tI need to see a modifi" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ModifyableEntity", "\tAs a user\r\n\tIn order to know when an object is modified\r\n\tI need to see a modifi" +
                     "ed date", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -113,7 +113,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("modifyableentity is initialised with the creation date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
- testRunner.Then("modifyableentity is initialised with the modification date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("modifyableentity is initialised with the modification date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

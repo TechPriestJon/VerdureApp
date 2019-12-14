@@ -1,4 +1,4 @@
-﻿Feature: VerdureCreatableEntityTests
+﻿Feature: CreatableEntity
     As a user
 	In order to know when an object is created
 	I need to see a creation date

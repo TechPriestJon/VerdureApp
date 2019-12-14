@@ -1,5 +1,6 @@
 ﻿using System;
 using Verdure.Domain.Base;
+using Verdure.Domain.Interfaces;
 
 namespace Verdure.Domain.Entities
 {
@@ -15,8 +16,8 @@ namespace Verdure.Domain.Entities
         }
 
 
-        public Guid Id { get => _id;  }
-        public string Name { get => _name; }
+        public Guid Id => _id;
+        public string Name => _name;
 
     }
 }

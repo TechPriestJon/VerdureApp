@@ -1,4 +1,5 @@
 ﻿using System;
+using Verdure.Domain.Interfaces;
 
 namespace Verdure.Domain.Base
 {
@@ -11,6 +12,6 @@ namespace Verdure.Domain.Base
             _createdDate = DateTimeOffset.UtcNow;
         }
 
-        public DateTimeOffset CreatedDate { get => _createdDate; }
+        public DateTimeOffset CreatedDate => _createdDate;
     }
 }

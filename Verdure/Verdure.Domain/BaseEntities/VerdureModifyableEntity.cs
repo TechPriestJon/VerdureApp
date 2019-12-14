@@ -1,4 +1,5 @@
 ﻿using System;
+using Verdure.Domain.Interfaces;
 
 namespace Verdure.Domain.Base
 {
@@ -11,7 +12,7 @@ namespace Verdure.Domain.Base
             _modifiedDate = CreatedDate;
         }
 
-        public DateTimeOffset ModifiedDate { get => _modifiedDate; }
+        public DateTimeOffset ModifiedDate => _modifiedDate;
 
         public virtual void Update()
         {

@@ -23,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="BaseEntities\VerdureAssignableModifyableEntityTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>VerdureAssignableModifyableEntityTests.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="BaseEntities\VerdureCreatableEntityTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>VerdureCreatableEntityTests.feature.cs</LastGenOutput>
@@ -31,9 +35,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>VerdureModifyableEntityTests.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Entities\User.feature">
+    <SpecFlowFeatureFiles Update="Entities\UserTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>User.feature.cs</LastGenOutput>
+      <LastGenOutput>UserTests.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
   </ItemGroup>
 
@@ -42,6 +46,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="BaseEntities\VerdureAssignableModifyableEntityTests.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VerdureAssignableModifyableEntityTests.feature</DependentUpon>
+    </Compile>
     <Compile Update="BaseEntities\VerdureCreatableEntityTests.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -52,10 +61,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>VerdureModifyableEntityTests.feature</DependentUpon>
     </Compile>
-    <Compile Update="Entities\User.feature.cs">
+    <Compile Update="Entities\UserTests.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>User.feature</DependentUpon>
+      <DependentUpon>UserTests.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 

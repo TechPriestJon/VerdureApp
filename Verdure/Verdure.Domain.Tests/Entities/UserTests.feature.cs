@@ -28,7 +28,7 @@ namespace Verdure.Domain.Tests.Entities
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "User.feature"
+#line 1 "UserTests.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]

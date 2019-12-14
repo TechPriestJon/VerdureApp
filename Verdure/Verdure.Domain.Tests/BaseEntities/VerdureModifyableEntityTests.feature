@@ -1,4 +1,4 @@
-﻿Feature: VerdureModifyableEntityTests
+﻿Feature: ModifyableEntity
 	As a user
 	In order to know when an object is modified
 	I need to see a modified date
@@ -8,7 +8,7 @@ Scenario: Entity initialises successfully
 	Given I have a modifyable entity
 	When create the modifyableentity
 	Then modifyableentity is initialised with the creation date
-	Then modifyableentity is initialised with the modification date
+	And modifyableentity is initialised with the modification date
 
 @baseentity
 Scenario: Entity modifies successfully

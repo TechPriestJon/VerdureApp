@@ -1,17 +1,19 @@
 ﻿using System;
+using Verdure.Domain.Interfaces;
 
 namespace Verdure.Domain.Base
 {
-    public abstract class VerdureAssignableModifyableEntity : VerdureModifyableEntity
+    public abstract class VerdureAssignableModifyableEntity : VerdureModifyableEntity, IVerdureAssignableModifyableEntity
     {
-        protected DateTimeOffset _modifiedDate;
+        protected Guid _userId;
 
-        protected VerdureAssignableModifyableEntity() : base()
+        protected VerdureAssignableModifyableEntity(IVerdureUser user) : base()
         {
             _modifiedDate = CreatedDate;
+            _userId = user.Id;
         }
 
-        public DateTimeOffset ModifiedDate => _modifiedDate;
+        public Guid UserId => _userId;
 
         public override void Update()
         {

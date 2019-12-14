@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Verdure.Domain.Entities
 {
-    class Meal
+    public class Meal
     {
     }
 }

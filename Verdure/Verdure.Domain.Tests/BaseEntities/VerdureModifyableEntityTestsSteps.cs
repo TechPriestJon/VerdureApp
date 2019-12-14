@@ -2,6 +2,7 @@
 using System;
 using TechTalk.SpecFlow;
 using Verdure.Domain.Base;
+using Verdure.Domain.Interfaces;
 
 namespace Verdure.Domain.Tests
 {

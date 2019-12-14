@@ -1,13 +1,13 @@
 ﻿using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
-using Verdure.Domain.Base;
 using Verdure.Domain.Entities;
+using Verdure.Domain.Interfaces;
 
 namespace Verdure.Domain.Tests.Entities
 {
     [Binding]
-    public class UserSteps
+    public class UserTestsSteps
     {
         string _username;
         string _anotherUsername;
