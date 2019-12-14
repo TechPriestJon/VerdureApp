@@ -8,7 +8,7 @@ namespace Verdure.Domain.Tests.BaseEntities
     [Binding]
     public class VerdureCreatableEntityTestsSteps
     {
-        InvokableCreatableEntity _invokableCreatableEntity;
+        IVerdureCreatableEntity _invokableCreatableEntity;
 
         [Given(@"I have a creatable entity")]
         public void GivenIHaveACreatableEntity()

@@ -8,7 +8,7 @@ namespace Verdure.Domain.Tests
     [Binding]
     public class VerdureModifyableEntityTestsSteps
     {
-        InvokableModifyableEntity _invokableModifyableEntity;
+        IVerdureModifyableEntity _invokableModifyableEntity;
 
         [Given(@"I have a modifyable entity")]
         public void GivenIHaveAModifyableEntity()

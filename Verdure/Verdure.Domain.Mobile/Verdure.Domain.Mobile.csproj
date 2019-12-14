@@ -5,12 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\Verdure.Domain\BaseEntities\IVerdureCreatableEntity.cs" Link="BaseEntities\IVerdureCreatableEntity.cs" />
+    <Compile Include="..\Verdure.Domain\BaseEntities\IVerdureGuidEntity.cs" Link="BaseEntities\IVerdureGuidEntity.cs" />
+    <Compile Include="..\Verdure.Domain\BaseEntities\IVerdureIdEntity.cs" Link="BaseEntities\IVerdureIdEntity.cs" />
+    <Compile Include="..\Verdure.Domain\BaseEntities\IVerdureModifyableEntity.cs" Link="BaseEntities\IVerdureModifyableEntity.cs" />
+    <Compile Include="..\Verdure.Domain\BaseEntities\IVerdureUser.cs" Link="BaseEntities\IVerdureUser.cs" />
+    <Compile Include="..\Verdure.Domain\BaseEntities\VerdureAssignableModifyableEntity.cs" Link="BaseEntities\VerdureAssignableModifyableEntity.cs" />
     <Compile Include="..\Verdure.Domain\BaseEntities\VerdureCreatableEntity.cs" Link="BaseEntities\VerdureCreatableEntity.cs" />
     <Compile Include="..\Verdure.Domain\BaseEntities\VerdureModifyableEntity.cs" Link="BaseEntities\VerdureModifyableEntity.cs" />
+    <Compile Include="..\Verdure.Domain\Entities\FoodItem.cs" Link="Entities\FoodItem.cs" />
+    <Compile Include="..\Verdure.Domain\Entities\Meal.cs" Link="Entities\Meal.cs" />
+    <Compile Include="..\Verdure.Domain\Entities\Snack.cs" Link="Entities\Snack.cs" />
+    <Compile Include="..\Verdure.Domain\Entities\VerdureUser.cs" Link="Entities\VerdureUser.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="BaseEntities\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
 
 </Project>

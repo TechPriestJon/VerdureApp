@@ -31,10 +31,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>VerdureModifyableEntityTests.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Entities\" />
+    <SpecFlowFeatureFiles Update="Entities\User.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>User.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 
   <ItemGroup>
@@ -51,6 +51,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>VerdureModifyableEntityTests.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Entities\User.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>User.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
