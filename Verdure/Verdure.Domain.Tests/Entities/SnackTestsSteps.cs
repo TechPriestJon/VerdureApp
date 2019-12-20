@@ -40,7 +40,7 @@ namespace Verdure.Domain.Tests.Entities
         [Given(@"I have another food item for my second snack")]
         public void GivenIHaveAnotherFoodItemForMySecondSnack()
         {
-            _foodItemOneSnackOne = new FoodItem("Cookie", 100, 2);
+            _foodItemOneSnackTwo = new FoodItem("Cookie", 100, 2);
         }
         
         [When(@"I create a snack")]

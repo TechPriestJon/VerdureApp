@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Verdure.Domain.Base;
 using Verdure.Domain.Interfaces;
 
 namespace Verdure.Domain.Entities
 {
-    public class FoodItem : IFoodItem
+    public class FoodItem : VerdureModifyableEntity, IFoodItem
     {
+        protected long _id;
+        protected long _calories;
+        protected string _name;
+
         public FoodItem(string name, long calories, long id) : base()
         {
-
+            _name = name;
+            _calories = calories;
+            _id = id;
         }
 
-        public string Name => throw new NotImplementedException();
+        public string Name => _name;
 
-        public int Calories => throw new NotImplementedException();
+        public long Calories => _calories;
 
-        public DateTimeOffset ModifiedDate => throw new NotImplementedException();
-
-        public DateTimeOffset CreatedDate => throw new NotImplementedException();
-
-        public long Id => throw new NotImplementedException();
-
-        long IFoodItem.Calories => throw new NotImplementedException();
-
-        public void Update()
-        {
-            throw new NotImplementedException();
-        }
+        public long Id => _id;
     }
 }

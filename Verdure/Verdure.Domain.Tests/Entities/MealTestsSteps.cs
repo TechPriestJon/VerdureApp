@@ -32,7 +32,6 @@ namespace Verdure.Domain.Tests.Entities
         [Given(@"another meal")]
         public void GivenAnotherMeal()
         {
-            _meal = new Meal(_user, 1);
         }
             
         [Given(@"I have two food items for my meal")]
@@ -110,7 +109,7 @@ namespace Verdure.Domain.Tests.Entities
         [Then(@"my meal has the food items attached")]
         public void ThenMyMealHasTheFoodItemsAttached()
         {
-            Assert.AreEqual(_meal.Food.Count, 2);
+            Assert.AreEqual(_meal.Food.Count(), 2);
 
             Assert.IsNotNull(_meal.Food.First(x => x.Id == _foodItemOneMealOne.Id));
             Assert.IsNotNull(_meal.Food.First(x => x.Id == _foodItemTwoMealOne.Id));
@@ -122,8 +121,8 @@ namespace Verdure.Domain.Tests.Entities
         [Then(@"my meals have the correct food items")]
         public void ThenMyMealsHaveTheCorrectFoodItems()
         {
-            Assert.AreEqual(_meal.Food.Count, 2);
-            Assert.AreEqual(_anotherMeal.Food.Count, 1);
+            Assert.AreEqual(_meal.Food.Count(), 2);
+            Assert.AreEqual(_anotherMeal.Food.Count(), 1);
 
             Assert.IsNotNull(_meal.Food.First(x => x.Id == _foodItemOneMealOne.Id));
             Assert.IsNotNull(_meal.Food.First(x => x.Id == _foodItemTwoMealOne.Id));

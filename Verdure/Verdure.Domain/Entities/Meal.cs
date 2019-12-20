@@ -8,14 +8,18 @@ namespace Verdure.Domain.Entities
 {
     public class Meal : VerdureAssignableModifyableEntity, IMeal
     {
-        public IList<IFoodItem> _fooditems;
+        protected IList<IFoodItem> _fooditems;
+        protected long _id;
 
         public Meal(IVerdureUser _user, long id) : base(_user)
-        {   }
+        {
+            _id = id;
+            _fooditems = new List<IFoodItem>();
+        }
 
-        public IList<IFoodItem> Food => _fooditems;
+        public IEnumerable<IFoodItem> Food => _fooditems;
 
-        public long Id => throw new NotImplementedException();
+        public long Id => _id;
 
         public void AddFoodItem(IFoodItem foodItem)
         {

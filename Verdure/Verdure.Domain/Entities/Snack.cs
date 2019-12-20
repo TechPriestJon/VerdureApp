@@ -8,16 +8,22 @@ namespace Verdure.Domain.Entities
 {
     public class Snack : VerdureAssignableModifyableEntity, ISnack
     {
+        protected IFoodItem _fooditem;
+        protected long _id;
+
+
         public Snack(IVerdureUser user, long id) : base(user) 
-        { }
+        {
+            _id = id;
+        }
 
-        public IFoodItem Food => throw new NotImplementedException();
+        public IFoodItem Food => _fooditem;
 
-        public long Id => throw new NotImplementedException();
+        public long Id => _id;
 
         public void SetFoodItem(IFoodItem foodItem)
         {
-            throw new NotImplementedException();
+            _fooditem = foodItem;
         }
 
     }
