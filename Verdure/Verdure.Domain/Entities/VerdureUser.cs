@@ -9,12 +9,11 @@ namespace Verdure.Domain.Entities
         Guid _id;
         string _name;
 
-        public VerdureUser(string Name) : base()
+        public VerdureUser(string name) : base()
         {
             _id = Guid.NewGuid();
-            _name = Name;
+            _name = name;
         }
-
 
         public Guid Id => _id;
         public string Name => _name;

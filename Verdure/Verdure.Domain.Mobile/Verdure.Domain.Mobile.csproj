@@ -12,6 +12,9 @@
     <Compile Include="..\Verdure.Domain\Entities\Meal.cs" Link="Entities\Meal.cs" />
     <Compile Include="..\Verdure.Domain\Entities\Snack.cs" Link="Entities\Snack.cs" />
     <Compile Include="..\Verdure.Domain\Entities\VerdureUser.cs" Link="Entities\VerdureUser.cs" />
+    <Compile Include="..\Verdure.Domain\Interfaces\IFoodItem.cs" Link="Interfaces\IFoodItem.cs" />
+    <Compile Include="..\Verdure.Domain\Interfaces\IMeal.cs" Link="Interfaces\IMeal.cs" />
+    <Compile Include="..\Verdure.Domain\Interfaces\ISnack.cs" Link="Interfaces\ISnack.cs" />
     <Compile Include="..\Verdure.Domain\Interfaces\IVerdureAssignableModifyableEntity.cs" Link="Interfaces\IVerdureAssignableModifyableEntity.cs" />
     <Compile Include="..\Verdure.Domain\Interfaces\IVerdureCreatableEntity.cs" Link="Interfaces\IVerdureCreatableEntity.cs" />
     <Compile Include="..\Verdure.Domain\Interfaces\IVerdureGuidEntity.cs" Link="Interfaces\IVerdureGuidEntity.cs" />

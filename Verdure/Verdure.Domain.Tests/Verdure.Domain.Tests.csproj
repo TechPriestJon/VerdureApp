@@ -35,6 +35,18 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>VerdureModifyableEntityTests.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Entities\FoodItemTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FoodItemTests.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Entities\MealTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MealTests.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Entities\SnackTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SnackTests.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Entities\UserTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserTests.feature.cs</LastGenOutput>
@@ -60,6 +72,21 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>VerdureModifyableEntityTests.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Entities\FoodItemTests.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FoodItemTests.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Entities\MealTests.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MealTests.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Entities\SnackTests.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SnackTests.feature</DependentUpon>
     </Compile>
     <Compile Update="Entities\UserTests.feature.cs">
       <DesignTime>True</DesignTime>
