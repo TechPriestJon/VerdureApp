@@ -19,7 +19,6 @@ Scenario: Create 2 Snacks
 	When I create a snack
 	And create another snack
 	Then my snacks are created
-	And the snacks have different ids
 	And my snack has my user attached
 
 @fooditem snack
@@ -45,6 +44,5 @@ Scenario: Attach 1 Food Items to Snack and 1 other Food Items to another Snack
 	And I add the food item to my snack
 	And I add the food item to my other snack
 	Then my snacks are created
-	And the snacks have different ids
 	And my snack has my user attached
 	And my snacks have the correct food items

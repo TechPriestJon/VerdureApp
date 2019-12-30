@@ -12,10 +12,8 @@ namespace Verdure.Domain.Entities
         protected long _id;
 
 
-        public Snack(IVerdureUser user, long id) : base(user) 
-        {
-            _id = id;
-        }
+        public Snack(IVerdureUser user) : base(user) 
+        {   }
 
         public IFoodItem Food => _fooditem;
 

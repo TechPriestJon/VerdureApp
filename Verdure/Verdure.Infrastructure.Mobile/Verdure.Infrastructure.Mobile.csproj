@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Verdure.Infrastructure\CoreClasses\EfcFoodItem.cs" Link="CoreClasses\EfcFoodItem.cs" />
+    <Compile Include="..\Verdure.Infrastructure\CoreClasses\EfcMeal.cs" Link="CoreClasses\EfcMeal.cs" />
+    <Compile Include="..\Verdure.Infrastructure\CoreClasses\EfcMealFoodItem.cs" Link="CoreClasses\EfcMealFoodItem.cs" />
+    <Compile Include="..\Verdure.Infrastructure\CoreClasses\EfcSnack.cs" Link="CoreClasses\EfcSnack.cs" />
+    <Compile Include="..\Verdure.Infrastructure\VerdureEfcContext.cs" Link="VerdureEfcContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Verdure.Domain.Mobile\Verdure.Domain.Mobile.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CoreClasses\" />
+  </ItemGroup>
+
+</Project>

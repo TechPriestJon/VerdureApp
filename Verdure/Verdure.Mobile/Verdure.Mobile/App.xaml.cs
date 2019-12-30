@@ -1,6 +1,9 @@
-﻿using Prism;
+﻿
+using Prism;
 using Prism.Ioc;
 using System;
+using Verdure.Infrastructure;
+using Verdure.Mobile.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -30,6 +33,7 @@ namespace Verdure.Mobile
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<Views.MainPage, MainPageViewModel>();
         }
+
     }
 
 

@@ -11,9 +11,8 @@ namespace Verdure.Domain.Entities
         protected IList<IFoodItem> _fooditems;
         protected long _id;
 
-        public Meal(IVerdureUser _user, long id) : base(_user)
+        public Meal(IVerdureUser _user) : base(_user)
         {
-            _id = id;
             _fooditems = new List<IFoodItem>();
         }
 

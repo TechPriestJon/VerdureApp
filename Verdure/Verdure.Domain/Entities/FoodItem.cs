@@ -12,12 +12,14 @@ namespace Verdure.Domain.Entities
         protected long _calories;
         protected string _name;
 
-        public FoodItem(string name, long calories, long id) : base()
+        public FoodItem(string name, long calories) : base()
         {
             _name = name;
             _calories = calories;
-            _id = id;
         }
+
+        private FoodItem()
+        {  }
 
         public string Name => _name;
 

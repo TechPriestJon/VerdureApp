@@ -37,26 +37,26 @@ namespace Verdure.Domain.Tests.Entities
         [Given(@"I have two food items for my meal")]
         public void GivenIHaveFoodItemsForMyMeal()
         {
-            _foodItemOneMealOne = new FoodItem("Sandwich", 250, 1);
-            _foodItemTwoMealOne = new FoodItem("Crisps", 100, 2);
+            _foodItemOneMealOne = new FoodItem("Sandwich", 250);
+            _foodItemTwoMealOne = new FoodItem("Crisps", 100);
         }
         
         [Given(@"I have another food item for my second meal")]
         public void GivenIHaveAnotherFoodItemForMySecondMeal()
         {
-            _foodItemOneMealTwo = new FoodItem("Hotdog", 150, 3);
+            _foodItemOneMealTwo = new FoodItem("Hotdog", 150);
         }
         
         [When(@"I create a meal")]
         public void WhenICreateAMeal()
         {
-            _meal = new Meal(_user, 1);
+            _meal = new Meal(_user);
         }
         
         [When(@"create another meal")]
         public void WhenCreateAnotherMeal()
         {
-            _anotherMeal = new Meal(_user, 2);
+            _anotherMeal = new Meal(_user);
         }
         
         [When(@"I add the food items to my meal")]
@@ -76,7 +76,6 @@ namespace Verdure.Domain.Tests.Entities
         public void ThenMyMealIsCreated()
         {
             Assert.IsNotNull(_meal.Id);
-            Assert.Greater(_meal.Id, 0);
             Assert.AreEqual(_meal.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
             Assert.AreEqual(_meal.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
             Assert.AreEqual(_meal.CreatedDate.Year, DateTimeOffset.UtcNow.Year);
@@ -88,22 +87,14 @@ namespace Verdure.Domain.Tests.Entities
         [Then(@"my meal has my user attached")]
         public void ThenMyMealHasMyUserAttached()
         {
-            Assert.AreEqual(_meal.UserId, _user.Id);
+            Assert.AreEqual(_meal.User.Id, _user.Id);
         }
         
         [Then(@"my meals are created")]
         public void ThenMyMealsAreCreated()
         {
             Assert.IsNotNull(_meal.Id);
-            Assert.Greater(_meal.Id, 0);
             Assert.IsNotNull(_anotherMeal.Id);
-            Assert.Greater(_anotherMeal.Id, 0);
-        }
-        
-        [Then(@"the meals have different ids")]
-        public void ThenTheMealsHaveDifferentIds()
-        {
-            Assert.Greater(_anotherMeal.Id, _meal.Id);
         }
         
         [Then(@"my meal has the food items attached")]
@@ -111,11 +102,11 @@ namespace Verdure.Domain.Tests.Entities
         {
             Assert.AreEqual(_meal.Food.Count(), 2);
 
-            Assert.IsNotNull(_meal.Food.First(x => x.Id == _foodItemOneMealOne.Id));
-            Assert.IsNotNull(_meal.Food.First(x => x.Id == _foodItemTwoMealOne.Id));
+            Assert.IsNotNull(_meal.Food.First());
+            Assert.IsNotNull(_meal.Food.Last());
 
-            Assert.AreEqual(_meal.Food.First(x => x.Id == _foodItemOneMealOne.Id).Name, _foodItemOneMealOne.Name);
-            Assert.AreEqual(_meal.Food.First(x => x.Id == _foodItemTwoMealOne.Id).Name, _foodItemTwoMealOne.Name);
+            Assert.AreEqual(_meal.Food.First().Name, _foodItemOneMealOne.Name);
+            Assert.AreEqual(_meal.Food.Last().Name, _foodItemTwoMealOne.Name);
         }
         
         [Then(@"my meals have the correct food items")]
@@ -124,13 +115,13 @@ namespace Verdure.Domain.Tests.Entities
             Assert.AreEqual(_meal.Food.Count(), 2);
             Assert.AreEqual(_anotherMeal.Food.Count(), 1);
 
-            Assert.IsNotNull(_meal.Food.First(x => x.Id == _foodItemOneMealOne.Id));
-            Assert.IsNotNull(_meal.Food.First(x => x.Id == _foodItemTwoMealOne.Id));
-            Assert.IsNotNull(_anotherMeal.Food.First(x => x.Id == _foodItemOneMealTwo.Id));
+            Assert.IsNotNull(_meal.Food.First());
+            Assert.IsNotNull(_meal.Food.Last());
+            Assert.IsNotNull(_anotherMeal.Food.First());
 
-            Assert.AreEqual(_meal.Food.First(x => x.Id == _foodItemOneMealOne.Id).Name, _foodItemOneMealOne.Name);
-            Assert.AreEqual(_meal.Food.First(x => x.Id == _foodItemTwoMealOne.Id).Name, _foodItemTwoMealOne.Name);
-            Assert.AreEqual(_anotherMeal.Food.First(x => x.Id == _foodItemOneMealTwo.Id).Name, _foodItemOneMealTwo.Name);
+            Assert.AreEqual(_meal.Food.First().Name, _foodItemOneMealOne.Name);
+            Assert.AreEqual(_meal.Food.Last().Name, _foodItemTwoMealOne.Name);
+            Assert.AreEqual(_anotherMeal.Food.First().Name, _foodItemOneMealTwo.Name);
         }
     }
 }

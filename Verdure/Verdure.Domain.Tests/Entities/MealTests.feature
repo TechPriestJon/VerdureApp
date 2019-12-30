@@ -19,7 +19,6 @@ Scenario: Create 2 Meals
 	When I create a meal
 	And create another meal
 	Then my meals are created
-	And the meals have different ids
 	And my meal has my user attached
 
 @fooditem meal
@@ -45,6 +44,5 @@ Scenario: Attach 2 Food Items to Meal and 1 other Food Items to another Meal
 	And I add the food items to my meal
 	And I add the food items to my other meal
 	Then my meals are created
-	And the meals have different ids
 	And my meal has my user attached
 	And my meals have the correct food items

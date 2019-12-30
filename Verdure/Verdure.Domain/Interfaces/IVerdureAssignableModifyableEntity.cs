@@ -1,9 +1,10 @@
 ﻿using System;
+using Verdure.Domain.Entities;
 
 namespace Verdure.Domain.Interfaces
 {
     public interface IVerdureAssignableModifyableEntity : IVerdureModifyableEntity
     {
-        Guid UserId { get; }
+        IVerdureUser User { get; }
     }
 }

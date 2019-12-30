@@ -34,25 +34,25 @@ namespace Verdure.Domain.Tests.Entities
         [Given(@"I have a food item for my snack")]
         public void GivenIHaveFoodItemsForMySnack()
         {
-            _foodItemOneSnackOne = new FoodItem("Apple", 80, 1);
+            _foodItemOneSnackOne = new FoodItem("Apple", 80);
         }
         
         [Given(@"I have another food item for my second snack")]
         public void GivenIHaveAnotherFoodItemForMySecondSnack()
         {
-            _foodItemOneSnackTwo = new FoodItem("Cookie", 100, 2);
+            _foodItemOneSnackTwo = new FoodItem("Cookie", 100);
         }
         
         [When(@"I create a snack")]
         public void WhenICreateASnack()
         {
-            _snack = new Snack(_user, 1);
+            _snack = new Snack(_user);
         }
         
         [When(@"create another snack")]
         public void WhenCreateAnotherSnack()
         {
-            _anotherSnack = new Snack(_user, 2);
+            _anotherSnack = new Snack(_user);
         }
         
         [When(@"I add the food item to my snack")]
@@ -71,7 +71,6 @@ namespace Verdure.Domain.Tests.Entities
         public void ThenMySnackIsCreated()
         {
             Assert.IsNotNull(_snack.Id);
-            Assert.Greater(_snack.Id, 0);
             Assert.AreEqual(_snack.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
             Assert.AreEqual(_snack.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
             Assert.AreEqual(_snack.CreatedDate.Year, DateTimeOffset.UtcNow.Year);
@@ -83,22 +82,14 @@ namespace Verdure.Domain.Tests.Entities
         [Then(@"my snack has my user attached")]
         public void ThenMySnackHasMyUserAttached()
         {
-            Assert.AreEqual(_snack.UserId, _user.Id);
+            Assert.AreEqual(_snack.User.Id, _user.Id);
         }
         
         [Then(@"my snacks are created")]
         public void ThenMySnacksAreCreated()
         {
             Assert.IsNotNull(_snack.Id);
-            Assert.Greater(_snack.Id, 0);
             Assert.IsNotNull(_anotherSnack.Id);
-            Assert.Greater(_anotherSnack.Id, 0);
-        }
-        
-        [Then(@"the snacks have different ids")]
-        public void ThenTheSnacksHaveDifferentIds()
-        {
-            Assert.Greater(_anotherSnack.Id, _snack.Id);
         }
         
         [Then(@"my snack has the food items attached")]

@@ -15,6 +15,11 @@ namespace Verdure.Domain.Entities
             _name = name;
         }
 
+        private VerdureUser()
+        {
+
+        }
+
         public Guid Id => _id;
         public string Name => _name;
 

@@ -23,7 +23,7 @@ namespace Verdure.Domain.Tests.Entities
         [When(@"I create a food item")]
         public void WhenICreateAFoodItem()
         {
-            _foodItem = new FoodItem(_foodItemName, _calories, 1);
+            _foodItem = new FoodItem(_foodItemName, _calories);
         }
         
         [Then(@"my food item has the same calories and name")]
@@ -32,7 +32,6 @@ namespace Verdure.Domain.Tests.Entities
             Assert.AreEqual(_foodItem.Calories, _calories);
             Assert.AreEqual(_foodItem.Name, _foodItemName);
             Assert.IsNotNull(_foodItem.Id);
-            Assert.Greater(_foodItem.Id, 0);
             Assert.AreEqual(_foodItem.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
             Assert.AreEqual(_foodItem.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
             Assert.AreEqual(_foodItem.CreatedDate.Year, DateTimeOffset.UtcNow.Year);

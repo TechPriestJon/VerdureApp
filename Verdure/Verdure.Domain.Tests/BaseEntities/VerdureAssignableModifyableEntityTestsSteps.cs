@@ -34,7 +34,7 @@ namespace Verdure.Domain.Tests.BaseEntities
         [Then(@"assignablemodifyableentity is initialised with the created user id")]
         public void ThenAssignablemodifyableentityIsInitialisedWithTheCreatedUserId()
         {
-            Assert.AreEqual(_user.Id, _invokableAssignableModifyableEntity.UserId);
+            Assert.AreEqual(_user.Id, _invokableAssignableModifyableEntity.User.Id);
         }
         
         [Then(@"assignablemodifyableentity is initialised with the creation date")]
