@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Verdure.Domain.Tests.Entities
+namespace Verdure.Infrastructure.Tests.EFCore
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Verdure.Domain.Tests.Entities
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("FoodItem")]
-    public partial class FoodItemFeature
+    [NUnit.Framework.DescriptionAttribute("VerdureUser")]
+    public partial class VerdureUserFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "FoodItemTests.feature"
+#line 1 "VerdureUser.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FoodItem", "    As a user\r\n\tIn order to know my calories in a food item\r\n\tI need to create a " +
-                    "food item record", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "VerdureUser", "\tAs a user\r\n\tIn order to store data about food I eat\r\n\tI want to have a store of " +
+                    "the user", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,14 +75,14 @@ namespace Verdure.Domain.Tests.Entities
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create Food Item")]
-        [NUnit.Framework.CategoryAttribute("fooditem")]
-        public virtual void CreateFoodItem()
+        [NUnit.Framework.DescriptionAttribute("Create User")]
+        [NUnit.Framework.CategoryAttribute("User")]
+        public virtual void CreateUser()
         {
             string[] tagsOfScenario = new string[] {
-                    "fooditem"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Food Item", null, new string[] {
-                        "fooditem"});
+                    "User"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create User", null, new string[] {
+                        "User"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -104,27 +104,27 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 8
- testRunner.Given("I have eaten a food item with calories and name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a User to create", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
- testRunner.When("I create a food item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Save the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
- testRunner.Then("my food item has the same calories and name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("my User is persisted in the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Delete Food Item")]
-        [NUnit.Framework.CategoryAttribute("fooditem")]
-        public virtual void DeleteFoodItem()
+        [NUnit.Framework.DescriptionAttribute("Delete User")]
+        [NUnit.Framework.CategoryAttribute("User")]
+        public virtual void DeleteUser()
         {
             string[] tagsOfScenario = new string[] {
-                    "fooditem"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Food Item", null, new string[] {
-                        "fooditem"});
+                    "User"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete User", null, new string[] {
+                        "User"});
 #line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -146,13 +146,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 14
- testRunner.Given("I have a food item to be deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a User persisted in the database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
- testRunner.When("I delete the food item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I delete the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
- testRunner.Then("my food item is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("my User is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -5,13 +5,13 @@ using System.Text;
 using Verdure.Domain.Entities;
 using Verdure.Domain.Interfaces;
 
-namespace Verdure.Infrastructure.CoreClasses
+namespace Verdure.Infrastructure.EFCore
 {
     public class EfcMeal : Meal
     {
         protected IList<EfcMealFoodItem> _efcMealFoodItem;
 
-        private EfcMeal() : base(null)
+        private EfcMeal()
         {
             _efcMealFoodItem = new List<EfcMealFoodItem>();
         }
@@ -43,6 +43,13 @@ namespace Verdure.Infrastructure.CoreClasses
                 FoodItem = foodItem,
                 Meal = this
             });
+            Update();
+        }
+
+        public new void RemoveFoodItem(long id)
+        {
+            _efcMealFoodItem.Remove(_efcMealFoodItem.First(x => x.FoodItemId == id));
+            Update();
         }
     }
 }

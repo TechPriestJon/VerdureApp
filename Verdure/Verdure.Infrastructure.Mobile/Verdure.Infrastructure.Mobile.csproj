@@ -5,10 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\Verdure.Infrastructure\CoreClasses\EfcFoodItem.cs" Link="CoreClasses\EfcFoodItem.cs" />
-    <Compile Include="..\Verdure.Infrastructure\CoreClasses\EfcMeal.cs" Link="CoreClasses\EfcMeal.cs" />
-    <Compile Include="..\Verdure.Infrastructure\CoreClasses\EfcMealFoodItem.cs" Link="CoreClasses\EfcMealFoodItem.cs" />
-    <Compile Include="..\Verdure.Infrastructure\CoreClasses\EfcSnack.cs" Link="CoreClasses\EfcSnack.cs" />
+    <Compile Include="..\Verdure.Infrastructure\EFCore\EfcFoodItem.cs" Link="EFCore\EfcFoodItem.cs" />
+    <Compile Include="..\Verdure.Infrastructure\EFCore\EfcMeal.cs" Link="EFCore\EfcMeal.cs" />
+    <Compile Include="..\Verdure.Infrastructure\EFCore\EfcMealFoodItem.cs" Link="EFCore\EfcMealFoodItem.cs" />
+    <Compile Include="..\Verdure.Infrastructure\EFCore\EfcSnack.cs" Link="EFCore\EfcSnack.cs" />
     <Compile Include="..\Verdure.Infrastructure\VerdureEfcContext.cs" Link="VerdureEfcContext.cs" />
   </ItemGroup>
 
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CoreClasses\" />
+    <Folder Include="EFCore\" />
   </ItemGroup>
 
 </Project>

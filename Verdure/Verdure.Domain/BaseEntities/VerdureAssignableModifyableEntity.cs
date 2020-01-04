@@ -10,7 +10,6 @@ namespace Verdure.Domain.Base
 
         protected VerdureAssignableModifyableEntity(IVerdureUser user) : base()
         {
-            _modifiedDate = CreatedDate;
             _user = user;
         }
 

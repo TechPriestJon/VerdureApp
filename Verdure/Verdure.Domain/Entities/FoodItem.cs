@@ -6,7 +6,7 @@ using Verdure.Domain.Interfaces;
 
 namespace Verdure.Domain.Entities
 {
-    public class FoodItem : VerdureModifyableEntity, IFoodItem
+    public class FoodItem : VerdureDeletableModifyableEntity, IFoodItem
     {
         protected long _id;
         protected long _calories;
@@ -18,7 +18,7 @@ namespace Verdure.Domain.Entities
             _calories = calories;
         }
 
-        private FoodItem()
+        protected FoodItem() : base()
         {  }
 
         public string Name => _name;
@@ -26,5 +26,6 @@ namespace Verdure.Domain.Entities
         public long Calories => _calories;
 
         public long Id => _id;
+
     }
 }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Verdure.Domain.Entities;
-using Verdure.Infrastructure.CoreClasses;
+using Verdure.Infrastructure.EFCore;
 
 namespace Verdure.Infrastructure
 {
@@ -32,6 +32,7 @@ namespace Verdure.Infrastructure
             modelBuilder.Entity<VerdureUser>().Property(x => x.Name);
             modelBuilder.Entity<VerdureUser>().Property(x => x.ModifiedDate);
             modelBuilder.Entity<VerdureUser>().Property(x => x.CreatedDate);
+            modelBuilder.Entity<VerdureUser>().Property(x => x.Deleted);
 
             modelBuilder.Entity<EfcFoodItem>().HasKey(x => x.Id);
             modelBuilder.Entity<EfcFoodItem>().Property(x => x.Name);
@@ -39,12 +40,15 @@ namespace Verdure.Infrastructure
                 .HasDefaultValue(0)
                 .IsRequired();
             modelBuilder.Entity<EfcFoodItem>().Property(x => x.ModifiedDate);
+            modelBuilder.Entity<EfcFoodItem>().Property(x => x.Deleted);
             modelBuilder.Entity<EfcFoodItem>().Property(x => x.CreatedDate);
 
             modelBuilder.Entity<EfcMeal>().HasKey(x => x.Id);
             modelBuilder.Entity<EfcMeal>().Ignore(x => x.Food);
             modelBuilder.Entity<EfcMeal>().HasOne(x => x.User)
-                .WithMany();
+                .WithMany(); 
+            modelBuilder.Entity<EfcMeal>().Property(x => x.ModifiedDate);
+            modelBuilder.Entity<EfcMeal>().Property(x => x.CreatedDate);
 
             modelBuilder.Entity<EfcMealFoodItem>().HasKey(x => new { x.FoodItemId, x.MealId });
             modelBuilder.Entity<EfcMealFoodItem>().HasOne(x => x.FoodItem)
@@ -58,7 +62,10 @@ namespace Verdure.Infrastructure
             modelBuilder.Entity<EfcSnack>().HasOne(x => x.User)
                 .WithMany();
             modelBuilder.Entity<EfcSnack>().HasOne(x => x.Food)
-                .WithMany().Metadata.DependentToPrincipal.SetField("_fooditem"); ;
+                .WithMany().Metadata.DependentToPrincipal.SetField("_fooditem"); 
+            modelBuilder.Entity<EfcSnack>().Property(x => x.ModifiedDate);
+            modelBuilder.Entity<EfcSnack>().Property(x => x.CreatedDate);
+
 
         }
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Verdure.Domain.Entities;
 using Verdure.Domain.Interfaces;
-using Verdure.Infrastructure.CoreClasses;
+using Verdure.Infrastructure.EFCore;
 
 namespace Verdure.Infrastructure.Tests.Config
 {

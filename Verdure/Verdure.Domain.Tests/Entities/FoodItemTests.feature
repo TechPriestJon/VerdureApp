@@ -8,3 +8,9 @@ Scenario: Create Food Item
 	Given I have eaten a food item with calories and name
 	When I create a food item
 	Then my food item has the same calories and name
+
+@fooditem
+Scenario: Delete Food Item
+	Given I have a food item to be deleted
+	When I delete the food item
+	Then my food item is deleted

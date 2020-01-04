@@ -9,7 +9,8 @@ namespace Verdure.Domain.Base
 
         protected VerdureCreatableEntity()
         {
-            _createdDate = DateTimeOffset.UtcNow;
+            if(_createdDate == null || _createdDate == DateTimeOffset.MinValue)
+                _createdDate = DateTimeOffset.UtcNow;
         }
 
         public DateTimeOffset CreatedDate => _createdDate;

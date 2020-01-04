@@ -39,5 +39,24 @@ namespace Verdure.Domain.Tests.Entities
             Assert.AreEqual(_foodItem.ModifiedDate.Month, DateTimeOffset.UtcNow.Month);
             Assert.AreEqual(_foodItem.ModifiedDate.Year, DateTimeOffset.UtcNow.Year);
         }
+
+        [Given(@"I have a food item to be deleted")]
+        public void GivenIHaveAFoodItemToBeDeleted()
+        {
+            _foodItem = new FoodItem("Hotdog", 120);
+            Assert.IsFalse(_foodItem.Deleted);
+        }
+
+        [When(@"I delete the food item")]
+        public void WhenIDeleteTheFoodItem()
+        {
+            _foodItem.Delete();
+        }
+
+        [Then(@"my food item is deleted")]
+        public void ThenMyFoodItemIsDeleted()
+        {
+            Assert.IsTrue(_foodItem.Deleted);
+        }
     }
 }

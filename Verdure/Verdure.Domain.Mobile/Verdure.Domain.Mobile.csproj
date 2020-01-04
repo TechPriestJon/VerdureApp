@@ -7,6 +7,7 @@
   <ItemGroup>
     <Compile Include="..\Verdure.Domain\BaseEntities\VerdureAssignableModifyableEntity.cs" Link="BaseEntities\VerdureAssignableModifyableEntity.cs" />
     <Compile Include="..\Verdure.Domain\BaseEntities\VerdureCreatableEntity.cs" Link="BaseEntities\VerdureCreatableEntity.cs" />
+    <Compile Include="..\Verdure.Domain\BaseEntities\VerdureDeletableModifyableEntity.cs" Link="BaseEntities\VerdureDeletableModifyableEntity.cs" />
     <Compile Include="..\Verdure.Domain\BaseEntities\VerdureModifyableEntity.cs" Link="BaseEntities\VerdureModifyableEntity.cs" />
     <Compile Include="..\Verdure.Domain\Entities\FoodItem.cs" Link="Entities\FoodItem.cs" />
     <Compile Include="..\Verdure.Domain\Entities\Meal.cs" Link="Entities\Meal.cs" />
@@ -17,6 +18,7 @@
     <Compile Include="..\Verdure.Domain\Interfaces\ISnack.cs" Link="Interfaces\ISnack.cs" />
     <Compile Include="..\Verdure.Domain\Interfaces\IVerdureAssignableModifyableEntity.cs" Link="Interfaces\IVerdureAssignableModifyableEntity.cs" />
     <Compile Include="..\Verdure.Domain\Interfaces\IVerdureCreatableEntity.cs" Link="Interfaces\IVerdureCreatableEntity.cs" />
+    <Compile Include="..\Verdure.Domain\Interfaces\IVerdureDeletableEntity.cs" Link="Interfaces\IVerdureDeletableEntity.cs" />
     <Compile Include="..\Verdure.Domain\Interfaces\IVerdureGuidEntity.cs" Link="Interfaces\IVerdureGuidEntity.cs" />
     <Compile Include="..\Verdure.Domain\Interfaces\IVerdureIdEntity.cs" Link="Interfaces\IVerdureIdEntity.cs" />
     <Compile Include="..\Verdure.Domain\Interfaces\IVerdureModifyableEntity.cs" Link="Interfaces\IVerdureModifyableEntity.cs" />

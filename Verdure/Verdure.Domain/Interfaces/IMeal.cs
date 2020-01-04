@@ -11,5 +11,7 @@ namespace Verdure.Domain.Interfaces
 
         void AddFoodItem(IFoodItem foodItem);
 
+        void RemoveFoodItem(long id);
+
     }
 }

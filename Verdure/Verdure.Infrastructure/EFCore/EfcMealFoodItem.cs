@@ -4,7 +4,7 @@ using System.Text;
 using Verdure.Domain.Entities;
 using Verdure.Domain.Interfaces;
 
-namespace Verdure.Infrastructure.CoreClasses
+namespace Verdure.Infrastructure.EFCore
 {
     public class EfcMealFoodItem
     {

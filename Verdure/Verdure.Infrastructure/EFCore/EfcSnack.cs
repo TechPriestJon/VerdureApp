@@ -4,7 +4,7 @@ using System.Text;
 using Verdure.Domain.Entities;
 using Verdure.Domain.Interfaces;
 
-namespace Verdure.Infrastructure.CoreClasses
+namespace Verdure.Infrastructure.EFCore
 {
     public class EfcSnack : Snack
     {
@@ -28,7 +28,7 @@ namespace Verdure.Infrastructure.CoreClasses
         {
             _fooditem = foodItem;
         }
-        private EfcSnack() : base(null)
+        private EfcSnack()
         {   }
 
         public EfcSnack(VerdureUser user) : base(user)

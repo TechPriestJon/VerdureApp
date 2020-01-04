@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Verdure.Domain.Tests.Entities
+namespace Verdure.Domain.Tests.BaseEntities
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,23 +20,23 @@ namespace Verdure.Domain.Tests.Entities
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("FoodItem")]
-    public partial class FoodItemFeature
+    [NUnit.Framework.DescriptionAttribute("VerdureDeletableAssignModEntityTests")]
+    public partial class VerdureDeletableAssignModEntityTestsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "FoodItemTests.feature"
+#line 1 "VerdureDeletableModifyableEntityTests.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FoodItem", "    As a user\r\n\tIn order to know my calories in a food item\r\n\tI need to create a " +
-                    "food item record", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "VerdureDeletableAssignModEntityTests", "    As a user\r\n\tIn order to know who created an object\r\n\tI need to see user id fo" +
+                    "r an object", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,14 +75,14 @@ namespace Verdure.Domain.Tests.Entities
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create Food Item")]
-        [NUnit.Framework.CategoryAttribute("fooditem")]
-        public virtual void CreateFoodItem()
+        [NUnit.Framework.DescriptionAttribute("Entity initialises successfully")]
+        [NUnit.Framework.CategoryAttribute("baseentity")]
+        public virtual void EntityInitialisesSuccessfully()
         {
             string[] tagsOfScenario = new string[] {
-                    "fooditem"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Food Item", null, new string[] {
-                        "fooditem"});
+                    "baseentity"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Entity initialises successfully", null, new string[] {
+                        "baseentity"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -104,27 +104,27 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 8
- testRunner.Given("I have eaten a food item with calories and name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a deletable entity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
- testRunner.When("I create a food item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("create the deletableentity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
- testRunner.Then("my food item has the same calories and name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("deletableentity defaults to not being deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Delete Food Item")]
-        [NUnit.Framework.CategoryAttribute("fooditem")]
-        public virtual void DeleteFoodItem()
+        [NUnit.Framework.DescriptionAttribute("Entity deletes successfully")]
+        [NUnit.Framework.CategoryAttribute("baseentity")]
+        public virtual void EntityDeletesSuccessfully()
         {
             string[] tagsOfScenario = new string[] {
-                    "fooditem"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Food Item", null, new string[] {
-                        "fooditem"});
+                    "baseentity"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Entity deletes successfully", null, new string[] {
+                        "baseentity"});
 #line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -146,13 +146,16 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 14
- testRunner.Given("I have a food item to be deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a deletable entity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
- testRunner.When("I delete the food item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("it is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
- testRunner.Then("my food item is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I when I delete it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 17
+ testRunner.Then("the deletableentity is deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

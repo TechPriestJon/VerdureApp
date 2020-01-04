@@ -9,7 +9,8 @@ namespace Verdure.Domain.Base
 
         protected VerdureModifyableEntity() : base()
         {
-            _modifiedDate = CreatedDate;
+            if (_modifiedDate == null || _modifiedDate == DateTimeOffset.MinValue)
+                _modifiedDate = CreatedDate;
         }
 
         public DateTimeOffset ModifiedDate => _modifiedDate;
