@@ -16,6 +16,9 @@
 /Verdure/Verdure.Infrastructure.Tests/bin
 /Verdure/Verdure.Infrastructure.Tests/obj
 
+/Verdure/Verdure.Infrastructure.Mobile.Tests/bin
+/Verdure/Verdure.Infrastructure.Mobile.Tests/obj
+
 /Verdure/Verdure.Mobile/Verdure.Mobile/bin
 /Verdure/Verdure.Mobile/Verdure.Mobile/obj
 
