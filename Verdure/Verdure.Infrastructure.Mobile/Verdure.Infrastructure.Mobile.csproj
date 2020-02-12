@@ -9,7 +9,7 @@
     <Compile Include="..\Verdure.Infrastructure\EFCore\EfcMeal.cs" Link="EFCore\EfcMeal.cs" />
     <Compile Include="..\Verdure.Infrastructure\EFCore\EfcMealFoodItem.cs" Link="EFCore\EfcMealFoodItem.cs" />
     <Compile Include="..\Verdure.Infrastructure\EFCore\EfcSnack.cs" Link="EFCore\EfcSnack.cs" />
-    <Compile Include="..\Verdure.Infrastructure\VerdureEfcContext.cs" Link="VerdureEfcContext.cs" />
+    <Compile Include="..\Verdure.Infrastructure\VerdureEfcContext.cs" Link="Context\VerdureEfcContext.cs" />
   </ItemGroup>
 
   <ItemGroup>
