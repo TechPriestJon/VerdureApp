@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.Forms.BehaviorsPack;
 
 namespace Verdure.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserSelectionPage : BasePage
+    public partial class SnackCreationPage : ContentPage
     {
-        public UserSelectionPage()
+        public SnackCreationPage()
         {
             InitializeComponent();
         }
