@@ -12,11 +12,13 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="9*" />
-            <RowDefinition Height="3*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="2*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="3*" />
+          <RowDefinition Height="3*" />
+          <RowDefinition Height="2*" />
+          <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
@@ -27,16 +29,24 @@
             </Grid.RowDefinitions>
             <Image Source="icon.png" HorizontalOptions="Center" VerticalOptions="Center"  />
         </Grid>
+        <Label Text="Add New Snack" LineBreakMode="WordWrap" Grid.Row="2" Grid.Column="1" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Large" />
         <Grid Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Label Text="Food Item:" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="End" />
+            <Label Text="Food Item:" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="End" Grid.ColumnSpan="2" />
             <Picker Grid.Row="1" HorizontalOptions="FillAndExpand" ItemsSource="{Binding FoodItemList}"
-                ItemDisplayBinding="{Binding Name}" TextColor="White" SelectedItem="{Binding FoodItem, Mode=TwoWay}" Title="Select a food item" TitleColor="LightSlateGray" />
+                ItemDisplayBinding="{Binding Name}" TextColor="White" SelectedItem="{Binding FoodItem, Mode=TwoWay}" Title="Select a food item" TitleColor="LightSlateGray" Grid.ColumnSpan="2" />
+            <Label Text="Calories:" LineBreakMode="WordWrap" Grid.Row="2" Grid.Column="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small"
+                                           FontAttributes="Italic" />
+            <Label Text="{Binding Calories}" LineBreakMode="WordWrap" Grid.Row="2" Grid.Column="1" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small"
+                                           FontAttributes="Italic" />
         </Grid>
         <Grid Grid.Row="5" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>

@@ -69,6 +69,8 @@ namespace Verdure.Mobile
             containerRegistry.RegisterForNavigation<MealCreationPage, MealCreationPageViewModel>();
             containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
             containerRegistry.RegisterForNavigation<SnackCreationPage, SnackCreationPageViewModel>();
+            containerRegistry.RegisterForNavigation<AmountCalculatorPage, AmountCalculatorPageViewModel>();
+            containerRegistry.RegisterForNavigation<ServingCalculatorPage, ServingCalculatorPageViewModel>();
 
 
 

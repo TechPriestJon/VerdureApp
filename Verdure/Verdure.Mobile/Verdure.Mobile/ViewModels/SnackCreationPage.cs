@@ -29,7 +29,10 @@ namespace Verdure.Mobile.ViewModels
             private set { SetProperty(ref _fooditemlist, value); }
         }
 
-        public EfcFoodItem FoodItem { get; set; }
+        private EfcFoodItem _foodItem;
+        public EfcFoodItem FoodItem { get { return _foodItem; } set { _foodItem = value; RaisePropertyChanged("Calories"); } }
+
+        public long Calories => _foodItem?.Calories ?? 0;
 
         public ICommand Cancel { get; private set; }
         public ICommand Submit { get; private set; }

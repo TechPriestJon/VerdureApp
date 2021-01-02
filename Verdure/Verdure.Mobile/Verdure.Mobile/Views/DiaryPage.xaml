@@ -13,10 +13,12 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="10*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="9*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
@@ -38,7 +40,7 @@
             </Grid.RowDefinitions>
             <Button Text="-1 Day" Grid.Column="0" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
                 Command="{Binding MinusOneDay}" />
-            <Label Text="{Binding DiaryDate}"  Grid.Column="1" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Large"  Grid.ColumnSpan="2" />
+            <Label Text="{Binding DiaryDate}"  Grid.Column="1" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" />
             <Button Text="Day +1" Grid.Column="2" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
                 Command="{Binding PlusOneDay}" />
         </Grid>
@@ -70,7 +72,7 @@
                                             <RowDefinition Height="*" />
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-                                        <Label Text="{Binding Name}" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Large"  Grid.ColumnSpan="2" />
+                                        <Label Text="{Binding Name}" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Medium"  Grid.ColumnSpan="2" />
                                         <Label Text="Calories: " LineBreakMode="WordWrap" Grid.Row="1" Grid.Column="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small"
                                            FontAttributes="Italic" />
                                         <Label Text="{Binding Calories}" LineBreakMode="WordWrap" Grid.Row="1" Grid.Column="1" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small"
@@ -84,7 +86,19 @@
                 </ListView>
             </Grid>
         </ScrollView>
-        <Grid Grid.Row="4" Grid.Column="1" VerticalOptions="FillAndExpand">
+      <Grid Grid.Row="4" Grid.Column="1" VerticalOptions="FillAndExpand">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Text="Total Daily Calories: " LineBreakMode="WordWrap" Grid.Row="0" Grid.Column="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small" />
+        <Label Text="{Binding TotalCalories}" LineBreakMode="WordWrap" Grid.Row="0" Grid.Column="1" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small"
+            FontAttributes="Italic" />
+      </Grid>
+        <Grid Grid.Row="5" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>

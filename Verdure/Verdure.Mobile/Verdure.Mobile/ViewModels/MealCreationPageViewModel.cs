@@ -38,6 +38,8 @@ namespace Verdure.Mobile.ViewModels
             set { SetProperty(ref _fooditem, value); }
         }
 
+        public long TotalCalories => (FoodItemSelectList?.Sum(x => x?.Calories ?? 0) ?? 0);
+
 
         private ObservableCollection<EfcFoodItem> _fooditemlist;
         public ObservableCollection<EfcFoodItem> FoodItemList
@@ -50,7 +52,7 @@ namespace Verdure.Mobile.ViewModels
         public ObservableCollection<EfcFoodItem> FoodItemSelectList
         {
             get { return _fooditemselectedlist; }
-            private set { SetProperty(ref _fooditemselectedlist, value); }
+            private set { SetProperty(ref _fooditemselectedlist, value); RaisePropertyChanged("TotalCalories"); }
         }
 
         public ICommand Cancel { get; private set; }
@@ -110,14 +112,11 @@ namespace Verdure.Mobile.ViewModels
             if(FoodItem != null)
             {
                 FoodItemSelectList.Add(FoodItem);
+                RaisePropertyChanged("TotalCalories");
                 var foodItemForRemoval = FoodItemList.FirstOrDefault(x => x.Id == FoodItem.Id);
                 FoodItemList.Remove(foodItemForRemoval);
                 FoodItem = null;
             }
-            //var foodItemSelectListToAdd = FoodItemSelectList;
-            //foodItemSelectListToAdd.Add(FoodItem);
-            //FoodItemSelectList = foodItemSelectListToAdd;
-
         }
     }
 }

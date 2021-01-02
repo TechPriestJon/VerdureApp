@@ -13,12 +13,12 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
@@ -29,11 +29,13 @@
             </Grid.RowDefinitions>
             <Image Source="icon.png" HorizontalOptions="Center" VerticalOptions="Center"  />
         </Grid>
+        <Label Text="Add New Food Items" LineBreakMode="WordWrap" Grid.Row="2" Grid.Column="1" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Large" />
         <Grid Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Label Text="Food Item Name:" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="End" />

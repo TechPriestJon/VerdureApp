@@ -25,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AmountCalculatorPage.xaml.cs">
+      <DependentUpon>AmountCalculatorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ServingCalculatorPage.xaml.cs">
+      <DependentUpon>ServingCalculatorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\FoodItemListPage.xaml.cs">
       <DependentUpon>FoodItemListPage.xaml</DependentUpon>
     </Compile>

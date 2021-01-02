@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Verdure.Mobile.Views"
+             Title="{Binding Title}"
+             x:Class="Verdure.Mobile.Views.AmountCalculatorPage"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack">
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="icon.png" HorizontalOptions="Center" VerticalOptions="Center"  />
+        </Grid>
+        <Label Text="Amount Calculator" LineBreakMode="WordWrap" Grid.Row="2" Grid.Column="1" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Large" />
+        <Grid Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="Food Item Name:" LineBreakMode="WordWrap" Grid.Row="0" Grid.Column="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+            <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Name}" HorizontalOptions="FillAndExpand" Placeholder="Food Item Name"  
+                   PlaceholderColor="LightSlateGray" TextColor="White" VerticalOptions="Center" />
+            <Label Text="Total Calories:" LineBreakMode="WordWrap" Grid.Row="1" Grid.Column="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+            <Label Grid.Row="1" Grid.Column="1"  Text="{Binding Calories}" HorizontalOptions="FillAndExpand"  TextColor="White" VerticalOptions="Center" />
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="1"  VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="Total Calories:" LineBreakMode="WordWrap" Grid.Row="0" Grid.Column="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+            <Entry Grid.Row="0" Grid.Column="1"  Keyboard="Numeric" Text="{Binding TotalCalories, Mode=TwoWay}" HorizontalOptions="FillAndExpand"  Placeholder="Calories" 
+                   PlaceholderColor="LightSlateGray" TextColor="White" />
+            <Label Text="Total Amount:" LineBreakMode="WordWrap" Grid.Row="1" Grid.Column="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+            <Entry Grid.Row="1" Grid.Column="1"  Keyboard="Numeric" Text="{Binding TotalAmount, Mode=TwoWay}" HorizontalOptions="FillAndExpand"  Placeholder="Calories" 
+                   PlaceholderColor="LightSlateGray" TextColor="White" />
+            <Picker Grid.Row="1" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" ItemsSource="{Binding UnitList}"
+                TextColor="White" SelectedItem="{Binding SelectedUnit, Mode=TwoWay}" Title="Select Unit" TitleColor="LightSlateGray" />
+            <Label Text="Calories Per Amount:" LineBreakMode="WordWrap" Grid.Row="2" Grid.Column="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+            <Entry Grid.Row="2" Grid.Column="1"  Keyboard="Numeric" Text="{Binding AmountCalories, Mode=TwoWay}" HorizontalOptions="FillAndExpand"  Placeholder="Calories" 
+                   PlaceholderColor="LightSlateGray" TextColor="White" />
+            <Label Text="Amount:" LineBreakMode="WordWrap" Grid.Row="3" Grid.Column="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+            <Entry Grid.Row="3" Grid.Column="1"  Keyboard="Numeric" Text="{Binding Amount, Mode=TwoWay}" HorizontalOptions="FillAndExpand"  Placeholder="Calories" 
+                   PlaceholderColor="LightSlateGray" TextColor="White" />
+            <Picker Grid.Row="3" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" ItemsSource="{Binding UnitList}"
+                TextColor="White" SelectedItem="{Binding SelectedUnit, Mode=TwoWay}" Title="Select Unit" TitleColor="LightSlateGray" />
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Text="Calculate" Grid.Row="0" Grid.Column="0" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding Calculate}" />
+            <Button Text="Submit" Grid.Row="0" Grid.Column="1" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding Submit}" />
+            <Button Text="Cancel" Grid.Row="0" Grid.Column="2" BackgroundColor="DarkOrange" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding Cancel}" />
+        </Grid>
+    </Grid>
+</views:BasePage>

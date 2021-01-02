@@ -52,7 +52,7 @@ namespace Verdure.Mobile.ViewModels
 
         public async Task UserSelectedTask(VerdureUser user)
         {
-            string id = user.Id.ToString();
+            _settingService.SetUser(user);
             await _navigationService.NavigateAsync(typeof(CentralPage).Name);
         }
 

@@ -38,6 +38,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 	        <Label Text="{Binding WelcomeUserString}" LineBreakMode="WordWrap" Grid.Row="0" Grid.Column="0" TextColor="White" Grid.ColumnSpan="2" />
             <Button Grid.Row="1" Grid.Column="0" Text="Diary" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
@@ -51,8 +52,12 @@
                  Command="{Binding NavigateToAddSnack}" />
             <Button Grid.Row="3" Grid.Column="1" Text="Add Meal" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
                  Command="{Binding NavigateToAddMeal}" />
+            <Button Grid.Row="4" Grid.Column="0" Text="Serving Calculator" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
+                Command="{Binding NavigateToServingCalculator}" />
+            <Button Grid.Row="4" Grid.Column="1" Text="Amount Calculator" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
+               Command="{Binding NavigateToAmountCalculator}" />
 
-            <Button Grid.Row="4" Grid.Column="0" Text="Change User" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
+            <Button Grid.Row="5" Grid.Column="0" Text="Change User" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
                  Command="{Binding NavigateToSelectUser}" Grid.ColumnSpan="2" />
         </Grid>
     </Grid>

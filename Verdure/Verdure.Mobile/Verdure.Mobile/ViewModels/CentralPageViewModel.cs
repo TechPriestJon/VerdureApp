@@ -21,6 +21,8 @@ namespace Verdure.Mobile.ViewModels
         public ICommand NavigateToSettings { get; private set; }
         public ICommand NavigateToSelectUser { get; private set; }
         public ICommand NavigateToDiary { get; private set; }
+        public ICommand NavigateToAmountCalculator { get; private set; }
+        public ICommand NavigateToServingCalculator { get; private set; }
 
         public ICommand SelectUser { get; private set; }
 
@@ -37,6 +39,9 @@ namespace Verdure.Mobile.ViewModels
             NavigateToAddMeal = new Command(async () => { await MealCreationNavigationTask(); });
             NavigateToAddSnack = new Command(async () => { await SnackCreationNavigationTask(); });
             NavigateToSettings = new Command(async () => { await SettingsNavigationTask(); });
+
+            NavigateToAmountCalculator = new Command(async () => { await AmountCalculatorNavigationTask(); });
+            NavigateToServingCalculator = new Command(async () => { await ServingCalculatorNavigationTask(); });
 
             var userName = settingService.CurrentUser.Name;
 
@@ -80,7 +85,15 @@ namespace Verdure.Mobile.ViewModels
             await _navigationService.NavigateAsync(typeof(SnackCreationPage).Name);
         }
 
+        public async Task ServingCalculatorNavigationTask()
+        {
+            await _navigationService.NavigateAsync(typeof(ServingCalculatorPage).Name);
+        }
 
+        public async Task AmountCalculatorNavigationTask()
+        {
+            await _navigationService.NavigateAsync(typeof(AmountCalculatorPage).Name);
+        }
 
     }
 }

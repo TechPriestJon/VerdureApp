@@ -23,7 +23,10 @@ namespace Verdure.Mobile.ViewModels
         public IEnumerable<EfcSnack> SnackList
         {
             get { return _snacklist; }
-            private set { SetProperty(ref _snacklist, value); }
+            private set { 
+                SetProperty(ref _snacklist, value);
+                RaisePropertyChanged("TotalCalories");
+            }
         }
 
 
@@ -33,7 +36,10 @@ namespace Verdure.Mobile.ViewModels
         public IEnumerable<EfcMeal> MealList
         {
             get { return _meallist; }
-            private set { SetProperty(ref _meallist, value); }
+            private set { 
+                SetProperty(ref _meallist, value);
+                RaisePropertyChanged("TotalCalories");
+            }
         }
 
 
@@ -41,10 +47,14 @@ namespace Verdure.Mobile.ViewModels
         public IList<object> ObjectList
         {
             get { return _objectlist; }
-            private set { SetProperty(ref _objectlist, value); }
+            private set { 
+                SetProperty(ref _objectlist, value);
+                RaisePropertyChanged("TotalCalories");
+            }
         }
 
-
+        public long TotalCalories => (MealList?.Sum(x => x?.Calories ?? 0) ?? 0) + (SnackList?.Sum(x => x?.Calories ?? 0) ?? 0);
+        
         private DateTime _diaryDate;
 
         public DateTime DiaryDateTime

@@ -52,7 +52,7 @@ namespace Verdure.Mobile.ViewModels
             {
                 await _foodItemRepository.Create(new EfcFoodItem(_name, _calories));
                 await _foodItemRepository.SaveAsync();
-                await _navigationService.NavigateAsync("/" + typeof(FoodItemListPage).Name);
+                await _navigationService.NavigateAsync("/" + typeof(CentralPage).Name);
             }
 
         }

@@ -12,12 +12,13 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="2*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="2*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="3*" />
+          <RowDefinition Height="3*" />
+          <RowDefinition Height="2*" />
+          <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
@@ -28,7 +29,20 @@
             </Grid.RowDefinitions>
             <Image Source="icon.png" HorizontalOptions="Center" VerticalOptions="Center"  />
         </Grid>
-        <ScrollView Grid.Row="2" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Always"
+      <Grid Grid.Row="2" Grid.Column="1" VerticalOptions="FillAndExpand">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="3*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Text="Add New Meal" LineBreakMode="WordWrap" Grid.Column="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Large" />
+        <Label Text="Calories" LineBreakMode="WordWrap" Grid.Column="1" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small" />
+        <Label Text="{Binding TotalCalories}" LineBreakMode="WordWrap" Grid.Column="2" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small" />
+      </Grid>
+        <ScrollView Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Always"
                     BackgroundColor="#111" >
             <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
@@ -67,7 +81,7 @@
                 </ListView>
             </Grid>
         </ScrollView>
-        <Grid Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand">
+        <Grid Grid.Row="4" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -78,7 +92,7 @@
             <Entry Grid.Row="1" Text="{Binding Name}" HorizontalOptions="FillAndExpand" Placeholder="Food Item Name"  
                    PlaceholderColor="LightSlateGray" TextColor="White" />
         </Grid>
-        <Grid Grid.Row="4" Grid.Column="1" VerticalOptions="FillAndExpand">
+        <Grid Grid.Row="5" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="*" />
@@ -93,7 +107,7 @@
             <Button Text="Add" Grid.Row="1" Grid.Column="1" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
                 Command="{Binding AddFoodItem}" />
         </Grid>
-        <Grid Grid.Row="5" Grid.Column="1" VerticalOptions="FillAndExpand">
+        <Grid Grid.Row="6" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
