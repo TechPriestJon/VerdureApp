@@ -5,19 +5,19 @@ namespace Verdure.Domain.Base
 {
     public abstract class VerdureModifyableEntity : VerdureCreatableEntity, IVerdureModifyableEntity
     {
-        protected DateTimeOffset _modifiedDate;
+        protected DateTime _modifiedDate;
 
         protected VerdureModifyableEntity() : base()
         {
-            if (_modifiedDate == null || _modifiedDate == DateTimeOffset.MinValue)
+            if (_modifiedDate == null || _modifiedDate == DateTime.MinValue)
                 _modifiedDate = CreatedDate;
         }
 
-        public DateTimeOffset ModifiedDate => _modifiedDate;
+        public DateTime ModifiedDate => _modifiedDate;
 
         public virtual void Update()
         {
-            _modifiedDate = DateTimeOffset.UtcNow;
+            _modifiedDate = DateTime.UtcNow;
         }
     }
 }

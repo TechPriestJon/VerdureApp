@@ -2,8 +2,26 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.11.5" />
+    <PackageReference Include="Realm" Version="5.1.2" />
+    <PackageReference Include="Realm.Fody" Version="5.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Verdure.Domain.Mobile\Verdure.Domain.Mobile.csproj" />
+    <ProjectReference Include="..\Verdure.Domain.Realm\Verdure.Domain.Realm.csproj" />
+    <ProjectReference Include="..\Verdure.Domain\Verdure.Domain.csproj" />
+    <ProjectReference Include="..\Verdure.Infrastructure.Mobile\Verdure.Infrastructure.Mobile.csproj" />
+    <ProjectReference Include="..\Verdure.Infrastructure\Verdure.Infrastructure.csproj" />
+    <ProjectReference Include="..\Verdure.Mobile\Verdure.Mobile\Verdure.Mobile.csproj" />
+  </ItemGroup>
 
 </Project>

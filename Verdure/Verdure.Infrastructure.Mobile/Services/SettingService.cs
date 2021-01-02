@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Text;
 using Verdure.Domain.Interfaces;
@@ -7,7 +7,7 @@ namespace Verdure.Infrastructure.Mobile.Services
 {
     public class SettingService : ISettingService
     {
-        protected IVerdureUser _user;
+        protected static IVerdureUser _user;
 
         public IVerdureUser CurrentUser => _user;
 

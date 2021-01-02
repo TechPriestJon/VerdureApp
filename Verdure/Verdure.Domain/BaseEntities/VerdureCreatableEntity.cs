@@ -5,14 +5,14 @@ namespace Verdure.Domain.Base
 {
     public abstract class VerdureCreatableEntity : IVerdureCreatableEntity
     {
-        protected DateTimeOffset _createdDate;
+        protected DateTime _createdDate;
 
         protected VerdureCreatableEntity()
         {
-            if(_createdDate == null || _createdDate == DateTimeOffset.MinValue)
-                _createdDate = DateTimeOffset.UtcNow;
+            if(_createdDate == null || _createdDate == DateTime.MinValue)
+                _createdDate = DateTime.UtcNow;
         }
 
-        public DateTimeOffset CreatedDate => _createdDate;
+        public DateTime CreatedDate => _createdDate;
     }
 }

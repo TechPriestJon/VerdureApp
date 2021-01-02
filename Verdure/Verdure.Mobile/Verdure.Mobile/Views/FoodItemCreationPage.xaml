@@ -1,15 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<views:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Verdure.Mobile.Views.FoodItemCreationPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+             xmlns:views="clr-namespace:Verdure.Mobile.Views"
+             Title="{Binding Title}"
+             x:Class="Verdure.Mobile.Views.FoodItemCreationPage"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack">
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="icon.png" HorizontalOptions="Center" VerticalOptions="Center"  />
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="Food Item Name:" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="End" />
+            <Entry Grid.Row="1" Text="{Binding Name}" HorizontalOptions="FillAndExpand" Placeholder="Food Item Name"  
+                   PlaceholderColor="LightSlateGray" TextColor="White" />
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="1"  VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="Food Item Calories:" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="End" />
+            <Entry Grid.Row="1" Keyboard="Numeric" Text="{Binding Calories}" HorizontalOptions="FillAndExpand"  Placeholder="Calories"  
+                   PlaceholderColor="LightSlateGray"  TextColor="White" />
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Text="Submit" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding Submit}" />
+            <Button Text="Cancel" Grid.Row="0" Grid.Column="1" BackgroundColor="DarkOrange" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding Cancel}" />
+        </Grid>
+    </Grid>
+</views:BasePage>

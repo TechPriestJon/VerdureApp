@@ -69,12 +69,15 @@
         <Grid Grid.Row="4" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Button Text="Add New User" BackgroundColor="DarkOrange" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+            <Button Text="Add New User" Grid.Row="0" Grid.Column="0" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
                 Command="{Binding AddNewUser}" />
+            <Button Text="Cancel" Grid.Row="0" Grid.Column="1" BackgroundColor="DarkOrange" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding Cancel}" />
         </Grid>
     </Grid>
 </views:BasePage>

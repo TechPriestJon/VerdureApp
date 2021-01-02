@@ -42,9 +42,12 @@ namespace Verdure.Mobile.ViewModels
 
         public async Task SubmitTask()
         {
-            await _userRepository.Create(new VerdureUser(_username));
-            await _userRepository.SaveAsync();
-            await _navigationService.NavigateAsync("/" + typeof(UserSelectionPage).Name);
+            if (!String.IsNullOrWhiteSpace(_username))
+            {
+                await _userRepository.Create(new VerdureUser(_username));
+                await _userRepository.SaveAsync();
+                await _navigationService.NavigateAsync("/" + typeof(UserSelectionPage).Name);
+            }
         }
 
     }

@@ -76,12 +76,12 @@ namespace Verdure.Domain.Tests.Entities
         public void ThenMyMealIsCreated()
         {
             Assert.IsNotNull(_meal.Id);
-            Assert.AreEqual(_meal.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_meal.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_meal.CreatedDate.Year, DateTimeOffset.UtcNow.Year);
-            Assert.AreEqual(_meal.ModifiedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_meal.ModifiedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_meal.ModifiedDate.Year, DateTimeOffset.UtcNow.Year);
+            Assert.AreEqual(_meal.CreatedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_meal.CreatedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_meal.CreatedDate.Year, DateTime.UtcNow.Year);
+            Assert.AreEqual(_meal.ModifiedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_meal.ModifiedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_meal.ModifiedDate.Year, DateTime.UtcNow.Year);
         }
         
         [Then(@"my meal has my user attached")]

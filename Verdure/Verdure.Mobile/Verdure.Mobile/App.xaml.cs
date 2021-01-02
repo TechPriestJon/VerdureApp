@@ -23,6 +23,8 @@ namespace Verdure.Mobile
 
         protected bool _hasUsers { get; private set; }
 
+        protected bool _hasOnlyOneUser { get; private set; }
+
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
         protected override async void OnInitialized()
@@ -30,7 +32,20 @@ namespace Verdure.Mobile
             InitializeComponent();
 
             if (_hasUsers)
-                await NavigationService.NavigateAsync("UserSelectionPage");
+            {
+                if (_hasOnlyOneUser)
+                {
+                    using (var context = Container.Resolve<VerdureEfcSqliteContext>())
+                    {
+                        var settingsService = Container.Resolve<SettingService>();
+                        var user = await context.Users.Where(x => x.Deleted == false).FirstOrDefaultAsync();
+                        settingsService.SetUser(user);
+                    }
+                    await NavigationService.NavigateAsync("CentralPage");
+                }
+                else
+                    await NavigationService.NavigateAsync("UserSelectionPage");
+            }
             else
                 await NavigationService.NavigateAsync("UserCreationPage");
         }
@@ -46,12 +61,29 @@ namespace Verdure.Mobile
 
             containerRegistry.RegisterForNavigation<UserCreationPage, UserCreationPageViewModel>();
             containerRegistry.RegisterForNavigation<UserSelectionPage, UserSelectionPageViewModel>();
+            containerRegistry.RegisterForNavigation<CentralPage, CentralPageViewModel>();
 
-            var context = Container.Resolve<VerdureEfcSqliteContext> ();
-            context.Database.EnsureCreated();
-            context.Database.Migrate();
+            containerRegistry.RegisterForNavigation<DiaryPage, DiaryPageViewModel>();
+            containerRegistry.RegisterForNavigation<FoodItemCreationPage, FoodItemCreationPageViewModel>();
+            containerRegistry.RegisterForNavigation<FoodItemListPage, FoodItemListPageViewModel>();
+            containerRegistry.RegisterForNavigation<MealCreationPage, MealCreationPageViewModel>();
+            containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
+            containerRegistry.RegisterForNavigation<SnackCreationPage, SnackCreationPageViewModel>();
 
-            _hasUsers = await context.Users.Where(x => x.Deleted == false).CountAsync() > 0;
+
+
+            using (var context = Container.Resolve<VerdureEfcSqliteContext>())
+            {
+                context.Database.EnsureCreated();
+                context.Database.Migrate();
+
+                _hasUsers = await context.Users.Where(x => x.Deleted == false).CountAsync() > 0;
+                if (_hasUsers)
+                {
+                    _hasOnlyOneUser = await context.Users.Where(x => x.Deleted == false).CountAsync() == 1;
+                }
+            }
+
         }
         
     }

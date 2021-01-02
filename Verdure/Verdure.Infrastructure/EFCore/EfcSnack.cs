@@ -36,5 +36,9 @@ namespace Verdure.Infrastructure.EFCore
 
 
         public new VerdureUser User => _user as VerdureUser;
+
+        public long Calories => _fooditem?.Calories ?? 0;
+
+        public string Name => _fooditem?.Name ?? "";
     }
 }

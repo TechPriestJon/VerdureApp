@@ -13,5 +13,7 @@ namespace Verdure.Domain.Interfaces
 
         void RemoveFoodItem(long id);
 
+        string Name { get; }
+
     }
 }

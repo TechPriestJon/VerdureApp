@@ -60,17 +60,17 @@ namespace Verdure.Domain.Tests.Entities
         [Then(@"my user has a creation date of today")]
         public void ThenMyUserHasACreationDateOfToday()
         {
-            Assert.AreEqual(_user.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_user.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_user.CreatedDate.Year, DateTimeOffset.UtcNow.Year);
+            Assert.AreEqual(_user.CreatedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_user.CreatedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_user.CreatedDate.Year, DateTime.UtcNow.Year);
         }
 
         [Then(@"my user and the other user have a creation date of today")]
         public void ThenMyUserAndTheOtherUserHaveACreationDateOfToday()
         {
-            Assert.AreEqual(_anotherUser.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_anotherUser.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_anotherUser.CreatedDate.Year, DateTimeOffset.UtcNow.Year);
+            Assert.AreEqual(_anotherUser.CreatedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_anotherUser.CreatedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_anotherUser.CreatedDate.Year, DateTime.UtcNow.Year);
         }
     }
 }

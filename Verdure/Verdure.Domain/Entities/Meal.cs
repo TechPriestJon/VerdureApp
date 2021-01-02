@@ -11,8 +11,9 @@ namespace Verdure.Domain.Entities
     {
         protected IList<IFoodItem> _fooditems;
         protected long _id;
+        protected string _name;
 
-        public Meal(IVerdureUser _user) : base(_user)
+        public Meal(IVerdureUser user) : base(user)
         {
             _fooditems = new List<IFoodItem>();
         }
@@ -35,5 +36,14 @@ namespace Verdure.Domain.Entities
             _fooditems.Remove(_fooditems.First(x => x.Id == id));
             base.Update();
         }
+
+        public void SetName(string name)
+        {
+            _name = name;
+        }
+
+        public string Name => _name;
+
+        public virtual long Calories => _fooditems?.Sum(x => x?.Calories ?? 0) ?? 0;
     }
 }

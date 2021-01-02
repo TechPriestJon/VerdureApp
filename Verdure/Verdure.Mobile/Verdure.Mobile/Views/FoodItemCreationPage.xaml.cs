@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Verdure.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FoodItemCreationPage : ContentPage
+    public partial class FoodItemCreationPage : BasePage
     {
         public FoodItemCreationPage()
         {

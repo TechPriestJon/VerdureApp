@@ -4,7 +4,7 @@ namespace Verdure.Domain.Interfaces
 {
     public interface IVerdureModifyableEntity : IVerdureCreatableEntity
     {
-        DateTimeOffset ModifiedDate { get; }
+        DateTime ModifiedDate { get; }
 
         void Update();
     }

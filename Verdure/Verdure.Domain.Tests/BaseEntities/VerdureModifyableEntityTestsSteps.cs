@@ -32,27 +32,27 @@ namespace Verdure.Domain.Tests
         [Then(@"modifyableentity is initialised with the modification date")]
         public void ThenObjectIsInitialisedWithTheModificationDate()
         {
-            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Year, DateTimeOffset.UtcNow.Year);
+            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Year, DateTime.UtcNow.Year);
             Assert.AreEqual(_invokableModifyableEntity.CreatedDate.Ticks, _invokableModifyableEntity.ModifiedDate.Ticks);
         }
         
         [Then(@"modifyableentity is modified with the modification date")]
         public void ThenObjectIsModifiedWithTheModificationDate()
         {
-            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Year, DateTimeOffset.UtcNow.Year);
+            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_invokableModifyableEntity.ModifiedDate.Year, DateTime.UtcNow.Year);
             Assert.AreNotEqual(_invokableModifyableEntity.CreatedDate.Ticks, _invokableModifyableEntity.ModifiedDate.Ticks);
         }
 
         [Then(@"modifyableentity is initialised with the creation date")]
         public void ThenObjectIsInitialisedWithTheCreationDate()
         {
-            Assert.AreEqual(_invokableModifyableEntity.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_invokableModifyableEntity.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_invokableModifyableEntity.CreatedDate.Year, DateTimeOffset.UtcNow.Year);
+            Assert.AreEqual(_invokableModifyableEntity.CreatedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_invokableModifyableEntity.CreatedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_invokableModifyableEntity.CreatedDate.Year, DateTime.UtcNow.Year);
         }
 
     }

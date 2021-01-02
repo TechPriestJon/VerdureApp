@@ -1,15 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<views:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Verdure.Mobile.Views.DiaryPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+             xmlns:views="clr-namespace:Verdure.Mobile.Views"
+             Title="{Binding Title}"
+             x:Class="Verdure.Mobile.Views.DiaryPage"
+             xmlns:behaviorsPack="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack">
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="icon.png" HorizontalOptions="Center" VerticalOptions="Center"  />
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Text="-1 Day" Grid.Column="0" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding MinusOneDay}" />
+            <Label Text="{Binding DiaryDate}"  Grid.Column="1" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Large"  Grid.ColumnSpan="2" />
+            <Button Text="Day +1" Grid.Column="2" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding PlusOneDay}" />
+        </Grid>
+        <ScrollView Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Always"
+                    BackgroundColor="#111" >
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ListView BackgroundColor="Transparent" SeparatorVisibility="None" HasUnevenRows="True" ItemsSource="{Binding ObjectList}" 
+                          SelectionMode="None" IsPullToRefreshEnabled="false">
+                    <ListView.Behaviors>
+                        <behaviorsPack:EventToCommandBehavior EventName="ItemTapped" EventArgsPropertyPath="Item"/>
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Grid.Row="3" Grid.Column="1" VerticalOptions="FillAndExpand">
+                                    <Grid VerticalOptions="FillAndExpand" Padding="5" Margin="5" BackgroundColor="#222">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Name}" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Large"  Grid.ColumnSpan="2" />
+                                        <Label Text="Calories: " LineBreakMode="WordWrap" Grid.Row="1" Grid.Column="0" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small"
+                                           FontAttributes="Italic" />
+                                        <Label Text="{Binding Calories}" LineBreakMode="WordWrap" Grid.Row="1" Grid.Column="1" TextColor="White" HorizontalOptions="StartAndExpand" FontSize="Small"
+                                           FontAttributes="Italic" />
+                                    </Grid>
+
+                                </Grid>
+                            </ViewCell >
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>
+        <Grid Grid.Row="4" Grid.Column="1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Text="Cancel" Grid.Row="0" BackgroundColor="DarkOrange" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                Command="{Binding Cancel}" />
+        </Grid>
+    </Grid>
+</views:BasePage>

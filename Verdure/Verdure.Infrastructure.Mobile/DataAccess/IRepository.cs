@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Verdure.Domain.Interfaces;
 
 namespace Verdure.Infrastructure.Mobile.DataAccess
 {
@@ -12,5 +14,7 @@ namespace Verdure.Infrastructure.Mobile.DataAccess
         Task<IEnumerable<T>> Get();
 
         Task SaveAsync();
+
+        VerdureEfcContext GetVerdureContext();
     }
 }

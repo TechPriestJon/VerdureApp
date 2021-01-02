@@ -48,9 +48,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Label Text="Password:" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="End" />
-            <Entry Grid.Row="1" IsPassword="True" Text="{Binding Password}" HorizontalOptions="CenterAndExpand"  Placeholder="Enter Password"  
-                   PlaceholderColor="LightSlateGray"  TextColor="White" />
+            <Label Text="" LineBreakMode="WordWrap" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="End" />
         </Grid>
         <Grid Grid.Row="5" Grid.Column="1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
@@ -59,7 +57,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Button Text="Submit" BackgroundColor="DarkOrange" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+            <Button Text="Submit" BackgroundColor="MediumSeaGreen" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
                 Command="{Binding Submit}" />
         </Grid>
     </Grid>

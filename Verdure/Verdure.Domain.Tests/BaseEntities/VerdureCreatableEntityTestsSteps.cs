@@ -26,9 +26,9 @@ namespace Verdure.Domain.Tests.BaseEntities
         [Then(@"creatableentity is initialised with the creation date")]
         public void ThenObjectIsInitialisedWithTheCreationDate()
         {
-            Assert.AreEqual(_invokableCreatableEntity.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_invokableCreatableEntity.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_invokableCreatableEntity.CreatedDate.Year, DateTimeOffset.UtcNow.Year);
+            Assert.AreEqual(_invokableCreatableEntity.CreatedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_invokableCreatableEntity.CreatedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_invokableCreatableEntity.CreatedDate.Year, DateTime.UtcNow.Year);
         }
     }
 

@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Verdure.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CentralPage : ContentPage
+    public partial class CentralPage : BasePage
     {
         public CentralPage()
         {

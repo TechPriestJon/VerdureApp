@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Verdure.Domain.Interfaces;
 using Verdure.Infrastructure.EFCore;
 
 namespace Verdure.Infrastructure.Mobile.DataAccess
@@ -31,6 +32,11 @@ namespace Verdure.Infrastructure.Mobile.DataAccess
         public async Task SaveAsync()
         {
             await _db.SaveChangesAsync();
+        }
+
+        public VerdureEfcContext GetVerdureContext()
+        {
+            return _db as VerdureEfcContext;
         }
     }
 }

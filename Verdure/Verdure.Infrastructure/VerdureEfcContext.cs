@@ -45,10 +45,12 @@ namespace Verdure.Infrastructure
 
             modelBuilder.Entity<EfcMeal>().HasKey(x => x.Id);
             modelBuilder.Entity<EfcMeal>().Ignore(x => x.Food);
+            modelBuilder.Entity<EfcMeal>().Property(x => x.Name);
             modelBuilder.Entity<EfcMeal>().HasOne(x => x.User)
                 .WithMany(); 
             modelBuilder.Entity<EfcMeal>().Property(x => x.ModifiedDate);
             modelBuilder.Entity<EfcMeal>().Property(x => x.CreatedDate);
+            modelBuilder.Entity<EfcMeal>().Ignore(x => x.Calories);
 
             modelBuilder.Entity<EfcMealFoodItem>().HasKey(x => new { x.FoodItemId, x.MealId });
             modelBuilder.Entity<EfcMealFoodItem>().HasOne(x => x.FoodItem)
@@ -65,6 +67,8 @@ namespace Verdure.Infrastructure
                 .WithMany().Metadata.DependentToPrincipal.SetField("_fooditem"); 
             modelBuilder.Entity<EfcSnack>().Property(x => x.ModifiedDate);
             modelBuilder.Entity<EfcSnack>().Property(x => x.CreatedDate);
+            modelBuilder.Entity<EfcSnack>().Ignore(x => x.Name);
+            modelBuilder.Entity<EfcSnack>().Ignore(x => x.Calories);
 
 
         }

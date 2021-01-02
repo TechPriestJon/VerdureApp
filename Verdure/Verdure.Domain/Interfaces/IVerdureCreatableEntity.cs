@@ -4,6 +4,6 @@ namespace Verdure.Domain.Interfaces
 {
     public interface IVerdureCreatableEntity
     {
-        DateTimeOffset CreatedDate { get; }
+        DateTime CreatedDate { get; }
     }
 }

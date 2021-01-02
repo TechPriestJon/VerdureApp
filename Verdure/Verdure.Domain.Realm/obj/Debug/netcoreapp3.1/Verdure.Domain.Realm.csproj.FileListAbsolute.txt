@@ -1,0 +1,10 @@
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\bin\Debug\netcoreapp3.1\Verdure.Domain.Realm.deps.json
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\bin\Debug\netcoreapp3.1\Verdure.Domain.Realm.dll
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\bin\Debug\netcoreapp3.1\Verdure.Domain.Realm.pdb
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\obj\Debug\netcoreapp3.1\Verdure.Domain.Realm.csprojAssemblyReference.cache
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\obj\Debug\netcoreapp3.1\Verdure.Domain.Realm.AssemblyInfoInputs.cache
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\obj\Debug\netcoreapp3.1\Verdure.Domain.Realm.AssemblyInfo.cs
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\obj\Debug\netcoreapp3.1\Verdure.Domain.Realm.csproj.CoreCompileInputs.cache
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\obj\Debug\netcoreapp3.1\Verdure.Domain.Realm.csproj.Fody.CopyLocal.cache
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\obj\Debug\netcoreapp3.1\Verdure.Domain.Realm.dll
+E:\Repos\VerdureApp\Verdure\Verdure.Domain.Realm\obj\Debug\netcoreapp3.1\Verdure.Domain.Realm.pdb

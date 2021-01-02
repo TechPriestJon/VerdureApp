@@ -32,12 +32,12 @@ namespace Verdure.Domain.Tests.Entities
             Assert.AreEqual(_foodItem.Calories, _calories);
             Assert.AreEqual(_foodItem.Name, _foodItemName);
             Assert.IsNotNull(_foodItem.Id);
-            Assert.AreEqual(_foodItem.CreatedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_foodItem.CreatedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_foodItem.CreatedDate.Year, DateTimeOffset.UtcNow.Year);
-            Assert.AreEqual(_foodItem.ModifiedDate.Day, DateTimeOffset.UtcNow.Day);
-            Assert.AreEqual(_foodItem.ModifiedDate.Month, DateTimeOffset.UtcNow.Month);
-            Assert.AreEqual(_foodItem.ModifiedDate.Year, DateTimeOffset.UtcNow.Year);
+            Assert.AreEqual(_foodItem.CreatedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_foodItem.CreatedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_foodItem.CreatedDate.Year, DateTime.UtcNow.Year);
+            Assert.AreEqual(_foodItem.ModifiedDate.Day, DateTime.UtcNow.Day);
+            Assert.AreEqual(_foodItem.ModifiedDate.Month, DateTime.UtcNow.Month);
+            Assert.AreEqual(_foodItem.ModifiedDate.Year, DateTime.UtcNow.Year);
         }
 
         [Given(@"I have a food item to be deleted")]

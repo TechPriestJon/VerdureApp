@@ -28,6 +28,8 @@ namespace Verdure.Mobile.ViewModels
 
         public ICommand SelectUser { get; private set; }
 
+        public ICommand Cancel { get; private set; }
+
         public UserSelectionPageViewModel(INavigationService navigationService, IGuidRepository<VerdureUser> userRepository, ISettingService settingService)
             : base(navigationService, settingService)
         {
@@ -35,6 +37,7 @@ namespace Verdure.Mobile.ViewModels
             _userRepository = userRepository;
             AddNewUser = new Command(async () => { await AddNewUserNavigationTask(); });
             SelectUser = new Command<VerdureUser>(async user => { await UserSelectedTask(user); });
+            Cancel = new Command(async () => { await CancelTask(); });
         }
 
         public async Task AddNewUserNavigationTask()
@@ -50,7 +53,12 @@ namespace Verdure.Mobile.ViewModels
         public async Task UserSelectedTask(VerdureUser user)
         {
             string id = user.Id.ToString();
-            throw new NotImplementedException();
+            await _navigationService.NavigateAsync(typeof(CentralPage).Name);
+        }
+
+        public async Task CancelTask()
+        {
+            await _navigationService.GoBackAsync();
         }
     }
 }

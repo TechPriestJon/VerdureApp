@@ -51,5 +51,7 @@ namespace Verdure.Infrastructure.EFCore
             _efcMealFoodItem.Remove(_efcMealFoodItem.First(x => x.FoodItemId == id));
             Update();
         }
+
+        public override long Calories => _efcMealFoodItem.Sum(x => x?.FoodItem?.Calories ?? 0);
     }
 }
